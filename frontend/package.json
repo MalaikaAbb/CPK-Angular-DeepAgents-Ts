@@ -11,7 +11,7 @@
     "gen:sources": "tsx scripts/generate-sources.ts",
     "prestart": "npm run gen:sources",
     "prebuild": "npm run gen:sources",
-    "runtime": "tsx server.ts",
+    "runtime": "tsx --env-file-if-exists=.env server.ts",
     "dev": "concurrently --kill-others --names runtime,angular --prefix-colors magenta,cyan \"npm:runtime\" \"npm:start\""
   },
   "private": true,
